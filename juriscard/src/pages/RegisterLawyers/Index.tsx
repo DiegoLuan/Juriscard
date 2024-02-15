@@ -4,7 +4,7 @@ import "./RegisterTailwind.css";
 
 
 export function RegisterLawyers() {
-    const atuacao = [
+    const acting = [
         'Trabalhista/Previdenciario',
         'Civil',
         'Penal',
@@ -15,9 +15,9 @@ export function RegisterLawyers() {
     ]
 
   return (
-    <main className={styles["container-register"]}>
-      <div className={`${styles.form} grid p-16 gap-9 w-full rounded-lg`}>
-        <h1 className="text-center text-2xl font-medium uppercase">
+    <main className="h-screen flex justify-center items-center">
+      <div className={`${styles.form} flex flex-col gap-3 p-8 rounded-lg w-96`}>
+        <h1 className="text-center text-2xl font-medium uppercase mb-3">
           Registrar Advogado
         </h1>
         <form className="flex flex-col gap-3">
@@ -53,7 +53,7 @@ export function RegisterLawyers() {
             className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-10"
           >
             <option selected>--</option>
-            {atuacao.map(itens => (
+            {acting.map(itens => (
                 <option key={itens} value={itens}>{itens}</option>
             ))}
           </select>

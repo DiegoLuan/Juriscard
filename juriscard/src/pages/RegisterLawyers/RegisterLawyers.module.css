@@ -1,22 +1,25 @@
-.container-register {
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    width: 100vw;
-}
-
 .form {
     border: 1px solid var(--border);
 }
 
-input, input:active, button {
+input, 
+input:active, 
+button
+{
     padding: 5px;
     background-color: var(--base);
     border: 1px solid var(--border);
+    width: 100%;
     outline: none;
     border-radius: 8px;
 }
 
 select {
     background-color: var(--base);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+    background-color: red;
 }
