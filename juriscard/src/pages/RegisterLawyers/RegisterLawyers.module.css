@@ -14,6 +14,12 @@ input:active {
     font-size: 14px;
 }
 
+input:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #272221 inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+
 button {
     padding: 5px;
     background-color: var(--base);
@@ -33,10 +39,16 @@ button:hover {
 
 select {
     background-color: var(--base);
+    cursor: pointer;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
     background-color: red;
+}
+
+p {
+    color: #dc2626;
+    font-size: 12px;
 }
