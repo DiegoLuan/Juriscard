@@ -44,10 +44,10 @@ export function RegisterLawyers() {
   return (
     <main className="h-screen flex justify-center items-center">
       <div
-        className={`${styles.form} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
+        className={`${styles.form} ${styles['bg-pan-left']} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
       >
-        <h1 className="text-center text-2xl font-medium uppercase mb-3">
-          Juriscard
+        <h1 className="text-center text-5xl font-medium mb-3">
+          JurisCARD
         </h1>
         <form
           onSubmit={handleSubmit(handleSubmitForm)}
