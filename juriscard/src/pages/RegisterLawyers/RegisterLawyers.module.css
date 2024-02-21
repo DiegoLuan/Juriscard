@@ -1,20 +1,32 @@
-.form {
-    border: 1px solid var(--border);
-    background: linear-gradient(225deg, rgba(0,0,0,1) 39%, rgba(218,165,32,1) 100%, rgba(218,172,32,1) 100%);    
+main {
+    background-image: url('../../assets/background-wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
-input,
-input:active {
-    padding: 5px;
+.form {
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    box-sizing: border-box;
+}
+
+input {
+    padding: 10px !important;
     background-color: var(--base);
     border: 1px solid var(--border);
     width: 100%;
+    height: 40px;
     outline: none;
     border-radius: 8px;
     font-size: 14px;
 }
 
-input:-webkit-autofill, select:-webkit-autofill {
+input:-webkit-autofill,
+select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #272221 inset !important;
     -webkit-text-fill-color: #fff !important;
 }
@@ -34,6 +46,9 @@ button:hover {
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
+    background-color:  rgba(218,165,32,1) !important;
+    color: #000;
+    font-weight: 400;
 }
 
 
@@ -45,4 +60,5 @@ select {
 p {
     color: #dc2626;
     font-size: 12px;
+    font-weight: bold;
 }

@@ -1,23 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import './index.css'
-import { ListLawyers } from './pages/ListLawyers/Index.tsx'
-import { RegisterLawyers } from './pages/RegisterLawyers/Index.tsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <ListLawyers/>
-  },
-  {
-    path: '/register',
-    element: <RegisterLawyers/>
-  }
-])
+const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </React.StrictMode>
+);

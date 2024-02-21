@@ -2,53 +2,83 @@
 import styles from "./RegisterLawyers.module.css";
 import { acting, states } from "../../util/Variables";
 import { z } from "zod";
-import InputMask from "react-input-mask"
+import InputMask from "react-input-mask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query"
+import { api } from "../../axios"; 
 
-function handleMask(str: string){
-  return str.replace(/[^0-9]/g,'')
+
+function handleMask(str: string) {
+  return str.replace(/[^0-9]/g, "");
 }
 
+async function createLaywers(lawyers: object){
+  await api.post(`/lawyers`, lawyers).catch(error => {
+    console.log('ERRO: ', error)
+  })
+}
+
+
 export function RegisterLawyers() {
+
   const formDataSchema = z.object({
-    name: z.string(),
-    email: z.string().email("*Insira um e-mail válido!"),
-    whatsapp: z.string(),
-    city: z.string(),
+    name: z.string().min(1, "*Campo obrigatório"),
+    email: z
+      .string()
+      .min(1, "*Campo obrigatório")
+      .email("*Insira um e-mail válido!"),
+    whatsapp: z.string().min(1, "*Campo obrigatório"),
+    city: z.string().min(1, "*Campo Obrigatório"),
     imageProfile: z.string(),
-    acting: z.string(),
-    state: z.string()
+    acting: z.string().min(1, "*Campo Obrigatório"),
+    state: z.string().min(1, "*Campo Obrigatório"),
   });
+
+  const { mutateAsync } = useMutation({
+    mutationFn: createLaywers
+  })
+  
+
 
   type FormProps = z.infer<typeof formDataSchema>;
 
-  const { register, handleSubmit, formState: { errors }  } = useForm<FormProps>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    
+    formState: { errors },
+  } = useForm<FormProps>({
     resolver: zodResolver(formDataSchema),
     mode: "onSubmit",
   });
 
-  function handleSubmitForm(data: FormProps) {
-    console.log(data.name)
-    console.log(data.email)
-    const wpp = handleMask(data.whatsapp)
-    console.log(wpp)
-    console.log(data.city)
-    console.log(data.imageProfile)
-    console.log(data.acting)
-    console.log(data.state)
-  }
+  async function handleSubmitForm(data: FormProps) {
+    const wpp = handleMask(data.whatsapp);
 
-  
+    await mutateAsync({
+      name: data.name,
+      email: data.email,
+      whatsapp: wpp,
+      city:data.city,
+      imageProfile: data.imageProfile,
+      acting: data.acting,
+      state: data.state,
+      createdAt: new Date().toLocaleString()
+    })
+    
+    reset()
+
+    alert("Cadastrado com sucesso!")
+  }
 
   return (
     <main className="h-screen flex justify-center items-center">
       <div
-        className={`${styles.form} ${styles['bg-pan-left']} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
+        className={`${styles.form} ${styles["bg-pan-left"]} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
       >
-        <h1 className="text-center text-5xl font-medium mb-3">
-          JurisCARD
-        </h1>
+        <h1 className="text-center text-5xl font-medium mb-3">JurisCARD</h1>
         <form
           onSubmit={handleSubmit(handleSubmitForm)}
           className="flex flex-col gap-5"
@@ -56,14 +86,14 @@ export function RegisterLawyers() {
           <div className="flex gap-5">
             <div className="flex flex-col">
               <label htmlFor="name">Nome</label>
-              <input type="text" id="name" required {...register("name")} />
-              {errors.name && <p>{ errors.name.message }</p>}
+              <input type="text" id="name" {...register("name")} />
+              {errors.name && <p>{errors.name.message}</p>}
             </div>
 
             <div className="flex flex-col">
               <label htmlFor="email">E-mail</label>
-              <input type="email" id="email" required {...register("email")} />
-              {errors.email && <p>{ errors.email.message }</p>}
+              <input type="email" id="email" {...register("email")} />
+              {errors.email && <p>{errors.email.message}</p>}
             </div>
           </div>
 
@@ -73,7 +103,7 @@ export function RegisterLawyers() {
               <InputMask
                 mask={"(99) 99999-9999"}
                 alwaysShowMask={false}
-                type={'text'}
+                type={"text"}
                 placeholder="Ex: (99) 99999-9999"
                 {...register("whatsapp")}
               />
@@ -82,7 +112,7 @@ export function RegisterLawyers() {
 
             <div className="flex flex-col">
               <label htmlFor="city">Cidade</label>
-              <input type="text" id="city" required {...register("city")}/>
+              <input type="text" id="city" {...register("city")} />
               {errors.city && <p>{errors.city.message}</p>}
             </div>
           </div>
@@ -124,7 +154,6 @@ export function RegisterLawyers() {
             ))}
             {errors.acting && <p>{errors.acting.message}</p>}
           </select>
-
 
           <button type="submit" className="text-center">
             Cadastrar

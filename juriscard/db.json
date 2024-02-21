@@ -1,3 +1,45 @@
 {
-    "lawyers": []
+  "lawyers": [
+    {
+      "id": "335c",
+      "name": "Diego Luan Oliveira Chaves",
+      "email": "dlochaves.00@gmail.com",
+      "whatsapp": "31993396808",
+      "city": "Betim",
+      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
+      "acting": "Civil",
+      "state": "Minas Gerais"
+    },
+    {
+      "id": "713f",
+      "name": "Elaine Almeida",
+      "email": "elaine@teste.com",
+      "whatsapp": "31995340454",
+      "city": "Belo Horizonte",
+      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
+      "acting": "Tributario",
+      "state": "Minas Gerais"
+    },
+    {
+      "id": "3939",
+      "name": "César IN",
+      "email": "cesar@teste.com",
+      "whatsapp": "31995874513",
+      "city": "São Paulo",
+      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
+      "acting": "Ambiental",
+      "state": "Sao Paulo"
+    },
+    {
+      "id": "51b3",
+      "name": "Diego Luan Oliveira Chaves",
+      "email": "dlochaves.00@gmail.com",
+      "whatsapp": "31993396808",
+      "city": "Betim",
+      "imageProfile": "asdasdasd",
+      "acting": "Trabalhista/Previdenciario",
+      "state": "Minas Gerais",
+      "createdAt": "21/02/2024, 15:11:54"
+    }
+  ]
 }
