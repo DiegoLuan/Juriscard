@@ -1,0 +1,18 @@
+/* .header {
+    background-image: url('../../assets/capa-header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.container-listLawyers {
+    background-color: #080404;
+}
+
+.button-icon{
+    border: none !important;
+    background-color: var(--card) !important;
+}
+
+.card-lawyers {
+    background-color: var(--card);
+}

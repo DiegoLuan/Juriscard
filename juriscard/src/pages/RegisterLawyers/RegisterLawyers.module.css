@@ -1,4 +1,4 @@
-main {
+.container-register {
     background-image: url('../../assets/background-wallpaper.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,25 +14,8 @@ main {
     box-sizing: border-box;
 }
 
-input {
-    padding: 10px !important;
-    background-color: var(--base);
-    border: 1px solid var(--border);
-    width: 100%;
-    height: 40px;
-    outline: none;
-    border-radius: 8px;
-    font-size: 14px;
-}
 
-input:-webkit-autofill,
-select:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #272221 inset !important;
-    -webkit-text-fill-color: #fff !important;
-}
-
-
-button {
+.button-register {
     padding: 5px;
     background-color: var(--base) !important;
     border: 1px solid var(--border);
@@ -42,7 +25,7 @@ button {
     transition: all 0.3s;
 }
 
-button:hover {
+.button-register:hover {
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);

@@ -5,23 +5,20 @@ import { z } from "zod";
 import InputMask from "react-input-mask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query"
-import { api } from "../../axios"; 
-
+import { useMutation } from "@tanstack/react-query";
+import { api } from "../../axios";
 
 function handleMask(str: string) {
   return str.replace(/[^0-9]/g, "");
 }
 
-async function createLaywers(lawyers: object){
-  await api.post(`/lawyers`, lawyers).catch(error => {
-    console.log('ERRO: ', error)
-  })
+async function createLaywers(lawyers: object) {
+  await api.post(`/lawyers`, lawyers).catch((error) => {
+    console.log("ERRO: ", error);
+  });
 }
 
-
 export function RegisterLawyers() {
-
   const formDataSchema = z.object({
     name: z.string().min(1, "*Campo obrigatório"),
     email: z
@@ -36,10 +33,8 @@ export function RegisterLawyers() {
   });
 
   const { mutateAsync } = useMutation({
-    mutationFn: createLaywers
-  })
-  
-
+    mutationFn: createLaywers,
+  });
 
   type FormProps = z.infer<typeof formDataSchema>;
 
@@ -47,7 +42,6 @@ export function RegisterLawyers() {
     register,
     handleSubmit,
     reset,
-    
     formState: { errors },
   } = useForm<FormProps>({
     resolver: zodResolver(formDataSchema),
@@ -61,22 +55,22 @@ export function RegisterLawyers() {
       name: data.name,
       email: data.email,
       whatsapp: wpp,
-      city:data.city,
+      city: data.city,
       imageProfile: data.imageProfile,
       acting: data.acting,
       state: data.state,
-      createdAt: new Date().toLocaleString()
-    })
-    
-    reset()
+      createdAt: new Date().toLocaleString(),
+    });
 
-    alert("Cadastrado com sucesso!")
+    reset();
+
+    alert("Cadastrado com sucesso!");
   }
 
   return (
-    <main className="h-screen flex justify-center items-center">
+    <main className={`${styles['container-register']} h-screen flex justify-center items-center`}>
       <div
-        className={`${styles.form} ${styles["bg-pan-left"]} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
+        className={`${styles.form} flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
       >
         <h1 className="text-center text-5xl font-medium mb-3">JurisCARD</h1>
         <form

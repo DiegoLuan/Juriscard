@@ -3,8 +3,9 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --base: #272221;
+  --base: #080404;
   --border: #8D8686;
+  --card: #141414;
 }
 
 * {
@@ -17,4 +18,41 @@ body {
   color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-optical-sizing: auto;
+}
+
+input {
+  padding: 10px !important;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #272221 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+button {
+  padding: 7px;
+  background-color: var(--base) !important;
+  border: 1px solid var(--border);
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+button-register:hover {
+  -webkit-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.75);
+  background-color:  rgba(218,165,32,1) !important;
+  color: #000;
+  font-weight: 400;
 }
