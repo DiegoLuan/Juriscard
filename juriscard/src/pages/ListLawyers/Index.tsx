@@ -18,11 +18,11 @@ export function ListLawyers() {
         </header>
 
         {/* Field-Search */}
-        <section className="container size-full px-6 mb-5">
+        <section className="container size-full px-6 mb-5 mx-auto">
           <div className="">
             <div
               className="grid grid-cols-2
-           gap-1"
+           "
             >
               <input type="text" placeholder="Pesquisar" />
               <div className="flex items-center justify-start">
@@ -35,7 +35,7 @@ export function ListLawyers() {
         </section>
 
         {/* Cards-Lawyers */}
-        <section className="container px-6">
+        <section className="container px-6 mx-auto">
           <div className="grid md:grid-cols-4 md:gap-5">
             {/* Card */}
             <Card 
@@ -49,7 +49,7 @@ export function ListLawyers() {
               showMore={showMore}
             />
             <Card 
-              imageProfile="https://media.licdn.com/dms/image/C4E03AQG9pVX8x9nyiQ/profile-displayphoto-shrink_200_200/0/1629771376481?e=1714003200&v=beta&t=ngyL_z0Z2iVPR9mn0Ubjxcv7y7Mut2ZXdCC000gZN1A"
+              imageProfile="https://files.tecnoblog.net/wp-content/uploads/2020/01/dragon-ball-z-kakarot-1060x597.jpg"
               acting="Ambiental"
               name="Elaine Almeida"
               email="elainelalmeida_00@gmail.com"

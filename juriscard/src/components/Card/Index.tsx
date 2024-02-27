@@ -23,17 +23,29 @@ export function Card({ imageProfile, acting, name, email, whatsapp, state, city,
                   <h2>{name}</h2>
                 </div>
               </div>
-              <div className="mb-3">
-                  <ul>
-                    <li>E-mail: {email}</li>
-                    <li>WhatApp: {whatsapp}</li>
-                    <li>Estado: {state}</li>
-                    <li>Cidade: {city}</li>
-                    <li>Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget augue nec auctor. Suspendisse potenti. Nullam risus lectus, tincidunt in elit nec, convallis facilisis purus. Sed nec iaculis metus. Cras tincidunt ante eu leo ultricies, sed aliquet sapien auctor. Sed efficitur vel neque ac ornare.</li>
-                    <li></li>
+              <div className={`${styles['description-card']} mb-3`}>
+                  <ul className='flex flex-col gap-1'>
+                    <li className='md:text-sm sm:text-sm'>
+                      <span className={`${styles['title-description']} mr-1`}>E-mail:</span>
+                      <span>{email}</span>
+                    </li>
+                    <li className='md:text-sm sm:text-sm'>
+                      <span className={`${styles['title-description']} mr-1`}>WhatsApp:</span>{whatsapp}
+                    </li>
+                    <li className='md:text-sm sm:text-sm'>
+                      <span className={`${styles['title-description']} mr-1`}>Estado:</span>{state}
+                    </li>
+                    <li className='md:text-sm sm:text-sm'>
+                      <span className={`${styles['title-description']} mr-1`}>Cidade:</span>{city}
+                    </li>
+                    <li className='md:text-sm sm:text-sm'>
+                      <span className={`${styles['title-description']} mr-1 flex`}>Descrição:</span>
+                      <span style={{textAlign:"justify"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget augue nec auctor. Suspendisse potenti. Nullam risus lectus, tincidunt in elit nec, convallis facilisis purus. Sed nec iaculis metus. Cras tincidunt ante eu leo ultricies, sed aliquet sapien auctor. Sed efficitur vel neque ac ornare.
+                      </span>
+                    </li>
                   </ul>
                 </div>
-                <button onClick={showMore} className="text-center">Ver mais</button>
+                <button onClick={showMore} >Ver mais</button>
             </div>
     )
 }
