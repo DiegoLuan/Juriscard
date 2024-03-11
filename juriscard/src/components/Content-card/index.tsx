@@ -1,6 +1,6 @@
 import styles from "./ContentCard.module.css";
 import LinesEllipsis from "react-lines-ellipsis";
-import { Divider } from "../Divider";
+import { Divider } from "../StyledComponent";
 
 type ContentCardProps = {
   imageProfile: string;
@@ -29,6 +29,7 @@ export function ContentCard({
   whatsapp,
   email
 }: ContentCardProps) {
+
   return (
     <>
       <div className="flex flex-col items-center mb-5">
@@ -45,13 +46,13 @@ export function ContentCard({
       </div>
       <div>
         {cortar ? (
-          <ul>
+          <ul className={styles['listLawyers']}>
             <li>
-              <span className={`${styles["title-description"]} mr-1`}>
+              <span className={`${styles["card"]} mr-1`}>
                 {state} - {city}
               </span>
             </li>
-            <li>
+            <li className="mb-5">
               <LinesEllipsis
                 text={description}
                 maxLine="2"
@@ -62,9 +63,9 @@ export function ContentCard({
             </li>
           </ul>
         ) : (
-          <ul className="flex flex-col gap-2">
+          <ul className={`${styles['listLawyers']}  flex flex-col gap-2`}>
             <li>
-              <span className={`${styles["title-description"]} mr-1`}>
+              <span className={`${styles["dialog"]} mr-1`}>
                 {state} - {city}
               </span>
             </li>
@@ -78,7 +79,7 @@ export function ContentCard({
               <span>E-mail: </span>{email}
             </li>
             <Divider $card={true}/> 
-            <li>
+            <li className="text-justify tracking-tighter">
               {description}
             </li>
           </ul>

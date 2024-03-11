@@ -55,3 +55,7 @@ p {
     font-size: 12px;
     font-weight: bold;
 }
+
+.container-register input, select, textarea {
+    background: rgba(26, 25, 25, 0.50) !important;
+}

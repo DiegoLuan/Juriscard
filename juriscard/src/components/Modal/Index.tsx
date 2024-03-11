@@ -1,26 +1,24 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { ReactNode } from "react";
-import Modal from "../../components/Modal/Index";
 // import { ContentCard } from '../Content-card';
 
-type DialogLawyersProps = {
-  imageProfile: string;
-  acting: string;
-  name: string;
-  state: string;
-  city: string;
-  address: string;
-  whatsapp: string;
-  email: string;
-  description: string;
-  children: ReactNode;
+type DialogProps = {
+  children: ReactNode
+  button: string
+  functionDialog?: () => void;
 };
 
-export const DialogDemo = ({ children }: DialogLawyersProps) => (
+export const DialogDemo = ({
+  children,
+  button,
+  functionDialog
+}: DialogProps) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <button className={`p-2 size-full`}>Ver mais</button>
+      <button className={`p-2 size-full`}>
+        { button  }
+      </button>
     </Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay
@@ -28,25 +26,14 @@ export const DialogDemo = ({ children }: DialogLawyersProps) => (
         className="data-[state=open]:animate-overlayShow fixed inset-0 h-screen overscroll-y-scroll"
       />
       <Dialog.Content
-        style={{ backgroundColor: "var(--card)" }}
+        style={{ backgroundColor: "var(--card)"}}
         className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none h-auto xs:overflow-y-scroll sm:overflow-y-scroll md:overflow-hidden"
       >
-        {children}
+        { children }
 
         <div className="mt-[25px] flex justify-start">
-          <button>
-            <Modal button="Contatar">
-              <div>
-                <div className="mb-8">
-                  <label htmlFor="name">Nome</label>
-                  <input type="text" />
-                </div>
-                <div>
-                  <label htmlFor="contact">Contato</label>
-                  <input type="text" />
-                </div>
-              </div>
-            </Modal>
+          <button onClick={functionDialog}>
+            { button }
           </button>
         </div>
         <Dialog.Close asChild>

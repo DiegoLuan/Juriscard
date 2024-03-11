@@ -26,6 +26,8 @@ export function Card({
   whatsapp,
   email,
 }: CardProps) {
+
+
   return (
     <div
       className={`${styles["card-lawyers"]} border box-border p-5 rounded-2xl mb-5 mr-5`}
@@ -61,6 +63,9 @@ export function Card({
             cortar={false}
             description={description}
             divider={true}
+            address={address}
+            email={email}
+            whatsapp={whatsapp}
           />
         </DialogLawyers>
       </div>

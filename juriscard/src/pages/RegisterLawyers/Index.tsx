@@ -9,6 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import { api } from "../../axios";
 import logoFormulario from '../../assets/logo-formulario.png'
 
+
 function handleMask(str: string) {
   return str.replace(/[^0-9]/g, "");
 }
@@ -20,6 +21,7 @@ async function createLaywers(lawyers: object) {
 }
 
 export function RegisterLawyers() {
+
   const formDataSchema = z.object({
     name: z.string().min(1, "*Campo obrigatório"),
     email: z
@@ -67,10 +69,11 @@ export function RegisterLawyers() {
       createdAt: new Date().toLocaleString(),
     });
 
-    reset();
+    reset()
 
-    alert("Cadastrado com sucesso!");
+    alert("Advogado cadastrado!")
   }
+
 
   return (
     <main className={`${styles['container-register']} h-screen sm:h-screen md:h-screen lg:h-auto 2xl:h-screen box-border flex justify-center items-center`}>

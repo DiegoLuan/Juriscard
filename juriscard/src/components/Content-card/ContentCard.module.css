@@ -1,6 +1,22 @@
-.title-description{
+.listLawyers .card{
     color: #BB9256;
     opacity: 0.9;
+    font-weight: normal !important;
+}
+
+
+.listLawyers .dialog{
+    color: #B6B5B5;
+    font-weight: normal !important;
+}
+
+.listLawyers li span {
+    font-weight: bold;
+    color: #B6B5B5;
+}
+
+.listLawyers li {
+    color: #B6B5B5;
 }
 
 .acting {
