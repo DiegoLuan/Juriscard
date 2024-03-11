@@ -2,8 +2,3 @@
     background-color: var(--card) !important;
 }
 
-.description-card .title-description{
-    color: #C7C8CC;
-    opacity: 0.5;
-    font-size: 14px;
-}

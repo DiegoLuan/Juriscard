@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      'goldJuriscard': '#BB9256'
+    },
     extend: {},
   },
   plugins: [],

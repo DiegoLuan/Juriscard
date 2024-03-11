@@ -1,78 +1,31 @@
 {
   "lawyers": [
     {
-      "id": "335c",
-      "name": "Diego Luan Oliveira Chaves",
+      "id": "e7e9",
+      "name": "Diego Chaves",
       "email": "dlochaves.00@gmail.com",
       "whatsapp": "31993396808",
       "city": "Betim",
-      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
-      "acting": "Civil",
-      "state": "Minas Gerais"
+      "imageProfile": "https://media.licdn.com/dms/image/D4D35AQHarOwoLTlErw/profile-framedphoto-shrink_200_200/0/1691165553373?e=1709924400&v=beta&t=bfAylWxRgh1FZ3fQpbxqyexdq81kNu56yCXDRhv1Iys",
+      "acting": "Penal",
+      "state": "Minas Gerais",
+      "address": "Rua Domingos José Diniz Costa, 92, Dom Bosco",
+      "description": "Olá, sou Carlos Mendes, advogado dedicado à busca incessante pela justiça e defesa intransigente dos direitos dos meus clientes. Com uma sólida formação jurídica e uma vasta experiência prática, estou comprometido em fornecer representação legal excepcional, garantindo que cada cliente receba a atenção personalizada que merece.",
+      "createdAt": "01/03/2024, 15:18:09"
     },
     {
-      "id": "713f",
-      "name": "Elaine Almeida",
+      "id": "c559",
+      "name": "Elaine Almeidaa",
       "email": "elaine@teste.com",
       "whatsapp": "31995340454",
-      "city": "Belo Horizonte",
-      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
-      "acting": "Tributario",
-      "state": "Minas Gerais"
-    },
-    {
-      "id": "3939",
-      "name": "César IN",
-      "email": "cesar@teste.com",
-      "whatsapp": "31995874513",
-      "city": "São Paulo",
-      "imageProfile": "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
-      "acting": "Ambiental",
-      "state": "Sao Paulo"
-    },
-    {
-      "id": "51b3",
-      "name": "Diego Luan Oliveira Chaves",
-      "email": "dlochaves.00@gmail.com",
-      "whatsapp": "31993396808",
-      "city": "Betim",
-      "imageProfile": "asdasdasd",
-      "acting": "Trabalhista/Previdenciario",
-      "state": "Minas Gerais",
-      "createdAt": "21/02/2024, 15:11:54"
-    },
-    {
-      "id": "7487",
-      "name": "Diego Luan Oliveira Chaves",
-      "email": "dlochaves.00@gmail.com",
-      "whatsapp": "31993396808",
-      "city": "Betim",
-      "imageProfile": "asdasdasdasd",
-      "acting": "Direito Eleitoral",
-      "state": "Minas Gerais",
-      "createdAt": "21/02/2024, 16:30:35"
-    },
-    {
-      "id": "da72",
-      "name": "Diego Luan Oliveira Chaves",
-      "email": "dlochaves.00@gmail.com",
-      "whatsapp": "31993396808",
-      "city": "Betim",
-      "imageProfile": "QualquerCoisa",
+      "city": "Guarulhos",
+      "imageProfile": "https://media.licdn.com/dms/image/C4E03AQG9pVX8x9nyiQ/profile-displayphoto-shrink_200_200/0/1629771376481?e=1714608000&v=beta&t=czpTLqCKOCxgIV4bF-_PeHI2O-pRGN9lBcehHuPRVwU",
       "acting": "Civil",
-      "state": "Minas Gerais",
-      "createdAt": "23/02/2024, 19:32:47"
-    },
-    {
-      "id": "3ec3",
-      "name": "Diego Luan Oliveira Chaves",
-      "email": "dlochaves.00@gmail.com",
-      "whatsapp": "31993396808",
-      "city": "Betim",
-      "imageProfile": "fotoDePerfil",
-      "acting": "Tributario",
-      "state": "Minas Gerais",
-      "createdAt": "27/02/2024, 14:06:26"
+      "state": "Sao Paulo",
+      "address": "Rua Tupaciguara, 385, Angola",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel elit erat. Cras sit amet lectus quis justo rhoncus bibendum. Fusce fermentum nunc id iaculis cursus. Fusce cursus ullamcorper eleifend. Donec sodales risus arcu, eget congue est varius quis. Nulla tincidunt tincidunt nisi, non porttitor ante hendrerit a. Aenean dictum quam eget sem scelerisque rhoncus. Curabitur mauris mauris, facilisis vel felis ac, egestas gravida mi. Duis mollis orci sem, eget iaculis augue vehicula nec.",
+      "createdAt": "01/03/2024, 16:17:39"
     }
-  ]
+  ],
+  "client": []
 }

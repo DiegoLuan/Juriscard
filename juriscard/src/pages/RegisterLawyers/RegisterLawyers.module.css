@@ -1,12 +1,13 @@
 .container-register {
-    background-image: url('../../assets/background-wallpaper.jpg');
+    background-image: url('../../assets/background-wallpaper.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-
+    opacity: 0.7;
 }
 
 .form {
-    background: rgba(255, 255, 255, 0.11);
+    background: rgba(68, 68, 68, 0.40);
+    backdrop-filter: blur(11.5px);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.3px);
@@ -36,8 +37,17 @@
 
 
 select {
-    background-color: var(--base);
+    background-color: var(--card);
     cursor: pointer;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+
+textarea {
+    background-color: var(--card);
+    resize: none !important;
+    border-bottom: 1px solid #fff;
+    height: 100px;
 }
 
 p {
