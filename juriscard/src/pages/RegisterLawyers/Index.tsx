@@ -8,11 +8,8 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { api } from "../../axios";
 import logoFormulario from '../../assets/logo-formulario.png'
+import { handleMask } from "../../util/Mask";
 
-
-function handleMask(str: string) {
-  return str.replace(/[^0-9]/g, "");
-}
 
 async function createLaywers(lawyers: object) {
   await api.post(`/lawyers`, lawyers).catch((error) => {
@@ -34,7 +31,7 @@ export function RegisterLawyers() {
     acting: z.string().min(1, "*Campo Obrigatório"),
     state: z.string().min(1, "*Campo Obrigatório"),
     address: z.string().min(1, "*Campo Obrigatório"),
-    description: z.string().min(1, "*Campo obrigatório").max(500)
+    description: z.string().min(1, "*Campo obrigatório").max(250)
   });
 
   const { mutateAsync } = useMutation({
@@ -76,7 +73,7 @@ export function RegisterLawyers() {
 
 
   return (
-    <main className={`${styles['container-register']} h-screen sm:h-screen md:h-screen lg:h-auto 2xl:h-screen box-border flex justify-center items-center`}>
+    <main className={`${styles['container-register']} h-screen sm:h-screen lg:h-auto box-border flex justify-center items-center`}>
       <div
         className={`${styles.form} border m-3 md:my-5 flex flex-col gap-3 p-8 rounded-lg shadow-2xl`}
       >
@@ -170,7 +167,7 @@ export function RegisterLawyers() {
           </div>
           <div className="flex flex-col">
               <label htmlFor="description">Descrição</label>
-              <textarea className="box-border p-2" id="description" {...register("description")}></textarea>
+              <textarea className="box-border p-2" id="description" {...register("description")} maxLength={250}></textarea>
               {errors.description && <p>{errors.description.message}</p>}
             </div>
 
