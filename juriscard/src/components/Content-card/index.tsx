@@ -1,6 +1,7 @@
 import styles from "./ContentCard.module.css";
 import LinesEllipsis from "react-lines-ellipsis";
 import { Divider } from "../StyledComponent";
+import { useEffect, useState } from "react";
 
 type ContentCardProps = {
   imageProfile: string;
@@ -29,6 +30,13 @@ export function ContentCard({
   whatsapp,
   email
 }: ContentCardProps) {
+
+  const [number, setNumber] = useState("")
+
+  useEffect(() => {
+    const numberMask = `(${whatsapp?.charAt(0)}${whatsapp?.charAt(1)}) ${whatsapp?.charAt(2)}${whatsapp?.charAt(3)}${whatsapp?.charAt(4)}${whatsapp?.charAt(5)}${whatsapp?.charAt(6)} - ${whatsapp?.charAt(7)}${whatsapp?.charAt(8)}${whatsapp?.charAt(9)}${whatsapp?.charAt(10)}`
+    setNumber(numberMask)
+  }, [])
 
   return (
     <>
@@ -87,7 +95,7 @@ export function ContentCard({
               <span>Endereço: </span>{address}
             </li>
             <li>
-              <span>Telefone: </span>{whatsapp}
+              <span>Telefone: </span>{number}
             </li>
             <li>
               <span>E-mail: </span>{email}
