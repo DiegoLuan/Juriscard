@@ -14,8 +14,11 @@ export const DialogDemo = ({
 }: DialogProps) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <button className={`p-2 size-full`}>
-        { button  }
+      <button className={`p-2 size-full whatsapp-button`}>
+      <div className="flex justify-center items-center">
+                        <i className="fa-brands fa-whatsapp h-8 w-8 flex justify-center items-center"></i>
+                        <span>{button }</span>
+                      </div>
       </button>
     </Dialog.Trigger>
     <Dialog.Portal>

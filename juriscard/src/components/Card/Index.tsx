@@ -30,7 +30,7 @@ export function Card({
 
   return (
     <div
-      className={`${styles["card-lawyers"]} border box-border p-5 rounded-2xl mb-5 mr-5`}
+      className={`${styles["card-lawyers"]} h-[470px] box-border p-5 rounded-2xl mb-5 mr-5`}
     >
       <ContentCard
         imageProfile={imageProfile}

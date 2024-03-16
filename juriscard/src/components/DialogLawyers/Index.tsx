@@ -10,6 +10,7 @@ import { api } from "../../axios";
 import { handleMask } from "../../util/Mask";
 import InputMask from "react-input-mask";
 
+
 type DialogLawyersProps = {
   imageProfile: string;
   acting: string;
@@ -25,48 +26,50 @@ type DialogLawyersProps = {
 
 const sendClient = async (client: object) => {
   await api.post(`/client`, client).catch((error) => {
-    console.log("Message Error: ", error)
-  })
-}
+    console.log("Message Error: ", error);
+  });
+};
 
-
-export default function DialogDemo({ children, name, whatsapp }: DialogLawyersProps) {
-
+export default function DialogDemo({
+  children,
+  name,
+  whatsapp,
+}: DialogLawyersProps) {
   const formDataSchema = z.object({
     nameClient: z.string().min(1, "*Campo obrigatório"),
-    phoneNumberClient: z.string().min(1, "*Campo obrigatório")
-  })
+    phoneNumberClient: z.string().min(1, "*Campo obrigatório"),
+  });
 
   type FormProps = z.infer<typeof formDataSchema>;
 
   const { register, handleSubmit, reset } = useForm<FormProps>({
     resolver: zodResolver(formDataSchema),
-    mode: "onSubmit"
-  })
+    mode: "onSubmit",
+  });
 
   const { mutateAsync } = useMutation({
-    mutationFn: sendClient
-  })
+    mutationFn: sendClient,
+  });
 
   const handleSubmitForm = async (data: FormProps) => {
-    const phone = handleMask(data.phoneNumberClient)
-    
+    const phone = handleMask(data.phoneNumberClient);
+
     await mutateAsync({
       client: data.nameClient,
       phone_client: phone,
       lawyer: name,
-      phone_lawyer: whatsapp
-    })
+      phone_lawyer: whatsapp,
+    });
 
-    alert("Enviado!")
+    alert("Enviado!");
 
-    reset()
-  }
+    reset();
+  };
 
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className={`p-2 size-full`}>Ver mais</button>
+        <button className={`p-2 size-full items-baseline`}>Ver mais</button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay
@@ -80,8 +83,7 @@ export default function DialogDemo({ children, name, whatsapp }: DialogLawyersPr
           {children}
 
           <div className="mt-[25px] flex justify-start">
-            <div>
-              <Modal button="Contatar">
+              <Modal button="Entrar em contato">
                 <form onSubmit={handleSubmit(handleSubmitForm)}>
                   <div className="flex flex-col gap-3">
                     <div className="mb-8">
@@ -98,13 +100,18 @@ export default function DialogDemo({ children, name, whatsapp }: DialogLawyersPr
                         {...register("phoneNumberClient")}
                       />
                     </div>
-                    <div>
-                      <button type="submit">Contatar</button>
-                    </div>
+                    <button
+                      className={`whatsapp-button flex justify-center items-centers`}
+                      type="submit"
+                    >
+                      <div className="flex justify-center items-center">
+                        <i className="fa-brands fa-whatsapp h-8 w-8 flex justify-center items-center"></i>
+                        <span>Entrar em contato</span>
+                      </div>
+                    </button>
                   </div>
                 </form>
               </Modal>
-            </div>
           </div>
           <Dialog.Close asChild>
             <button
@@ -117,6 +124,6 @@ export default function DialogDemo({ children, name, whatsapp }: DialogLawyersPr
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-  )
-  1
+  );
+  1;
 }

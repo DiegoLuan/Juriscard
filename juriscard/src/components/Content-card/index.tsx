@@ -54,7 +54,7 @@ export function ContentCard({
             </div>
             <Divider $card={divider} />
           </div>
-          <ul className={styles['listLawyers']}>
+          <ul className={`${styles['listLawyers']} h-32`}>
             <li>
               <span className={`${styles["card"]} mr-1`}>
                 {state} - {city}
