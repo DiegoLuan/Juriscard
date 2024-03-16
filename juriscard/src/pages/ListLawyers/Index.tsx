@@ -31,11 +31,6 @@ export function ListLawyers() {
   })
 
 
-  // function handleClick(id: string){
-  //   console.log(id)
-  // }
-  
-
   return (
     <>
       <main className={`${styles['container-listLawyers']}`}>
